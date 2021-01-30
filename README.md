@@ -29,6 +29,11 @@ Example distributed solution for learning and testing twelve factor, distributed
     - Bring up whole solution using Harbor images (without needing source code cloned)
       - `docker-compose -f docker-compose.images.yml up`
 
+4. Try the app UI
+    - Vote for your favorite at http://localhost:5000
+    - View the results (uses websockets) http://localhost:5001
+    - Note: only one vote per browser, so use multiple browsers or incognito to vote more then once.
+
 ## Coming soon
 
 1. Install Kubernetes
