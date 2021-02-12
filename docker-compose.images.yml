@@ -47,7 +47,7 @@ services:
       - back-tier
 
   db:
-    image: postgres:13.1
+    image: postgres:13.2
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"

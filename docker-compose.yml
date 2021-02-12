@@ -15,9 +15,6 @@ services:
      - ../example-voting-vote:/app
     ports:
       - "5000:80"
-    networks:
-      - front-tier
-      - back-tier
 
   result:
     image: harbor-ci.cpie.io/verodin/example-voting-result:latest
@@ -32,9 +29,6 @@ services:
     ports:
       - "5001:80"
       - "5858:5858"
-    networks:
-      - front-tier
-      - back-tier
 
   worker:
     image: harbor-ci.cpie.io/verodin/example-voting-worker:latest
@@ -46,8 +40,6 @@ services:
         condition: service_healthy 
     volumes:
       - ../example-voting-worker:/app
-    networks:
-      - back-tier
 
   redis:
     image: redis:6.0.10
@@ -57,11 +49,9 @@ services:
       test: /healthchecks/redis.sh
       interval: "5s"
     ports: ["6379"]
-    networks:
-      - back-tier
 
   db:
-    image: postgres:13
+    image: postgres:13.2
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
@@ -71,12 +61,7 @@ services:
     healthcheck:
       test: /healthchecks/postgres.sh
       interval: "5s"
-    networks:
-      - back-tier
 
 volumes:
   db-data:
 
-networks:
-  front-tier:
-  back-tier:
