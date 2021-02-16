@@ -1,5 +1,7 @@
 # Voting App Example
 
+![Dog vs Cat](images/dogvcat.png)
+
 Example distributed solution for learning and testing twelve factor, distributed, and cloud native concepts. This is an extended version of the [Docker example voting app repo](https://github.com/dockersamples/example-voting-app).
 
 This is the main repo for this solution. Each service in this solution has its own repo:
@@ -11,6 +13,7 @@ This is the main repo for this solution. Each service in this solution has its o
 - Supporting files: https://github.com/Verodin/example-voting-misc
 - DB migrations: https://github.com/Verodin/example-voting-db 
 
+![Voting App Architecture](images/architecture.png)
 ## Steps to get started
 
 1. Clone this solution
