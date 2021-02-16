@@ -4,7 +4,7 @@
 
 services:
   vote:
-    image: harbor-ci.cpie.io/verodin/example-voting-vote:latest
+    image: harbor-ci.cpie.io/verodin/example-voting-vote:local
     build: ../example-voting-vote
     # use python rather than gunicorn for local dev
     command: python app.py
@@ -17,7 +17,7 @@ services:
       - "5000:80"
 
   result:
-    image: harbor-ci.cpie.io/verodin/example-voting-result:latest
+    image: harbor-ci.cpie.io/verodin/example-voting-result:local
     build: ../example-voting-result
     # use nodemon rather than node for local dev
     command: nodemon server.js
@@ -31,7 +31,7 @@ services:
       - "5858:5858"
 
   worker:
-    image: harbor-ci.cpie.io/verodin/example-voting-worker:latest
+    image: harbor-ci.cpie.io/verodin/example-voting-worker:local
     build: ../example-voting-worker
     depends_on:
       redis:
