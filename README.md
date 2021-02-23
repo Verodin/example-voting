@@ -103,8 +103,8 @@ NOTE: don't run in Compose and Kubernetes at the same time, as we're using fixed
       ```
 
 3. Try the app UI
-    - Vote for your favorite at http://localhost:5000
-    - View the results (uses websockets) http://localhost:5001
+    - Vote for your favorite at http://localhost:31000 (note the post change - Kubernetes maps internal ports to external ones automatically)
+    - View the results (uses websockets) http://localhost:31001
     - Note: only one vote per browser, so use multiple browsers or incognito to vote more then once.
 
 4. Clean up
